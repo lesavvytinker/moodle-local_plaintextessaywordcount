@@ -1,0 +1,97 @@
+/* Live word counter shown under "Plain text, with word count" essay responses. */
+.que.essaywc .qtype_essaywc-counter {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .35em;
+    margin: .5rem 0;
+    padding: .4rem .75rem;
+    border: 2px solid var(--bs-primary, #0f6cbf);
+    border-radius: .375rem;
+    background-color: var(--bs-body-bg, #fff);
+    font-size: .95rem;
+    line-height: 1.4;
+}
+
+.que.essaywc .qtype_essaywc-label {
+    font-weight: 700;
+}
+
+.que.essaywc .qtype_essaywc-number {
+    min-width: 2ch;
+    color: var(--bs-primary, #0f6cbf);
+    font-size: 1.2em;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.que.essaywc .qtype_essaywc-limits {
+    color: var(--bs-secondary-color, #6a737b);
+}
+
+.que.essaywc .qtype_essaywc-status:empty {
+    display: none;
+}
+
+.que.essaywc .qtype_essaywc-status {
+    font-weight: 600;
+}
+
+/* Within the limits. */
+.que.essaywc .qtype_essaywc-counter.is-ok {
+    border-color: var(--bs-success, #357a32);
+}
+
+.que.essaywc .qtype_essaywc-counter.is-ok .qtype_essaywc-number {
+    color: var(--bs-success, #357a32);
+}
+
+/* Below the minimum: a gentle nudge, not an error. */
+.que.essaywc .qtype_essaywc-counter.is-under {
+    border-color: var(--bs-warning, #f0ad4e);
+}
+
+.que.essaywc .qtype_essaywc-counter.is-under .qtype_essaywc-status {
+    color: var(--bs-warning-text-emphasis, #664d03);
+}
+
+/* Over the maximum. */
+.que.essaywc .qtype_essaywc-counter.is-over {
+    border-color: var(--bs-danger, #ca3120);
+}
+
+.que.essaywc .qtype_essaywc-counter.is-over .qtype_essaywc-number,
+.que.essaywc .qtype_essaywc-counter.is-over .qtype_essaywc-status {
+    color: var(--bs-danger, #ca3120);
+}
+
+/* Core Essay styles are keyed to .que.essay, so repeat the ones this type needs. */
+.que.essaywc textarea.qtype_essay_response {
+    width: 100%;
+}
+
+.que.essaywc textarea.qtype_essay_response.qtype_essay_plain {
+    white-space: pre-wrap;
+    font: inherit;
+}
+
+.que.essaywc textarea.qtype_essay_response.qtype_essay_monospaced {
+    white-space: pre;
+    font-family: Andale Mono, Monaco, Courier New, DejaVu Sans Mono, monospace;
+}
+
+.que.essaywc .qtype_essay_response {
+    min-height: 3em;
+}
+
+.que.essaywc .qtype_essay_response.readonly {
+    background-color: white;
+}
+
+.que.essaywc div.qtype_essay_response textarea {
+    width: 100%;
+}
+
+.que.essaywc .ablock .filemanager .fp-restrictions {
+    margin-top: 1em;
+}
