@@ -7,7 +7,7 @@ With that format, students see a live word count under the answer box as they ty
 question has a minimum or maximum word limit, the counter also shows the limit and flags when
 the answer is below the minimum or over the maximum.
 
-Built for PTE-style writing tasks (Summarise Written Text, Write Essay), where students need to
+Built for PTE/IELTS-style writing tasks (Summarise Written Text, Write Essay), where students need to
 watch word limits while they write.
 
 ## What it does
