@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.0 (2026-10-06)
+
+- Moodle app support: students can answer "Plain text, with word count" questions (and the
+  ordinary plain-text formats) in the Moodle app, with the same live word counter and word limits.
+  Works offline in the app too.
+- Questions using the HTML editor formats or file attachments still need a browser in the app.
+
 ## 1.0.0 (2026-10-02)
 
 First release.

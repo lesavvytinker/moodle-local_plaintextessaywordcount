@@ -14,22 +14,33 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
+namespace qtype_essaywc\output;
+
 /**
- * Version information for the Essay (word count) question type.
+ * Supplies the Moodle app with the template and JavaScript for Essay (word count) questions.
  *
  * @package    qtype_essaywc
  * @copyright  2026 Harvey, Equip English
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->component = 'qtype_essaywc';
-$plugin->version   = 2026100600;
-$plugin->requires  = 2025041400; // Moodle 5.0.
-$plugin->supported = [500, 501];
-$plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = '1.1.0';
-$plugin->dependencies = [
-    'qtype_essay' => ANY_VERSION,
-];
+class mobile {
+    /**
+     * Return the app template and JavaScript. The question HTML itself comes from the quiz web services.
+     *
+     * @param array $args arguments from the app (unused).
+     * @return array
+     */
+    public static function mobile_get_essaywc($args) {
+        global $CFG;
+        $dir = $CFG->dirroot . '/question/type/essaywc/mobile';
+        return [
+            'templates' => [
+                [
+                    'id' => 'main',
+                    'html' => file_get_contents($dir . '/essaywc.html'),
+                ],
+            ],
+            'javascript' => file_get_contents($dir . '/mobile.js'),
+        ];
+    }
+}

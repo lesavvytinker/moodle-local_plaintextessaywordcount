@@ -7,7 +7,7 @@ With that format, students see a live word count under the answer box as they ty
 question has a minimum or maximum word limit, the counter also shows the limit and flags when
 the answer is below the minimum or over the maximum.
 
-Built for PTE/IELTS-style writing tasks (Summarise Written Text, Write Essay), where students need to
+Built for PTE-style writing tasks (Summarise Written Text, Write Essay), where students need to
 watch word limits while they write.
 
 ## What it does
@@ -22,6 +22,15 @@ watch word limits while they write.
   no word limits are set.
 - Grading is manual, exactly as with Essay: same grading screen, mark box, comment box and
   "Information for graders".
+
+## Moodle app
+
+Students can answer these questions in the Moodle app, including offline, with the same live
+word counter. This covers the plain-text formats without attachments. Questions set to use the
+HTML editor or allow file attachments show the app's usual "open this in your browser" message.
+
+After installing or upgrading, students may need to pull down to refresh the app (or log out and
+back in) before the app picks up the new question type.
 
 ## Links
 

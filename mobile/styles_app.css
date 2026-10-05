@@ -1,0 +1,61 @@
+/* Moodle app styles for Essay (word count) questions. */
+.qtype-essaywc-counter {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35em;
+    padding: 0.4rem 0.75rem;
+    border: 2px solid var(--ion-color-primary, #0f6cbf);
+    border-radius: 0.375rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.qtype-essaywc-label {
+    font-weight: 700;
+}
+
+.qtype-essaywc-number {
+    min-width: 2ch;
+    color: var(--ion-color-primary, #0f6cbf);
+    font-size: 1.2em;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.qtype-essaywc-limits {
+    color: var(--ion-color-medium, #6a737b);
+}
+
+.qtype-essaywc-status {
+    font-weight: 600;
+}
+
+.qtype-essaywc-counter.is-ok {
+    border-color: var(--ion-color-success, #357a32);
+}
+
+.qtype-essaywc-counter.is-ok .qtype-essaywc-number {
+    color: var(--ion-color-success, #357a32);
+}
+
+.qtype-essaywc-counter.is-under {
+    border-color: var(--ion-color-warning, #f0ad4e);
+}
+
+.qtype-essaywc-counter.is-under .qtype-essaywc-status {
+    color: var(--ion-color-warning-shade, #8a5a00);
+}
+
+.qtype-essaywc-counter.is-over {
+    border-color: var(--ion-color-danger, #ca3120);
+}
+
+.qtype-essaywc-counter.is-over .qtype-essaywc-number,
+.qtype-essaywc-counter.is-over .qtype-essaywc-status {
+    color: var(--ion-color-danger, #ca3120);
+}
+
+.qtype-essaywc-answer {
+    white-space: pre-wrap;
+}

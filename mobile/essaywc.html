@@ -1,0 +1,51 @@
+<ion-list *ngIf="question && (question.text || question.text === '')" class="qtype-essaywc">
+    <!-- Question text. -->
+    <ion-item class="ion-text-wrap">
+        <ion-label>
+            <core-format-text [component]="component" [componentId]="componentId" [text]="question.text"
+                [contextLevel]="contextLevel" [contextInstanceId]="contextInstanceId" [courseId]="courseId">
+            </core-format-text>
+        </ion-label>
+    </ion-item>
+
+    <!-- Answering. -->
+    <ng-container *ngIf="!question.reviewing && question.textarea">
+        <ion-item>
+            <input *ngIf="question.formatInput" type="hidden" [name]="question.formatInput.name"
+                [value]="question.formatInput.value">
+            <ion-textarea class="core-question-textarea qtype-essaywc-textarea" [class.core-monospaced]="question.isMonospaced"
+                [attr.aria-label]="'core.question.answer' | translate" placeholder="{{ 'core.question.answer' | translate }}"
+                [attr.name]="question.textarea.name" [value]="question.textarea.text" [autoGrow]="true" rows="8"
+                (ionInput)="onAnswerInput($event)">
+            </ion-textarea>
+        </ion-item>
+
+        <!-- Live word count. -->
+        <ion-item *ngIf="wc" lines="none" class="ion-text-wrap qtype-essaywc-counter-item">
+            <ion-label>
+                <div class="qtype-essaywc-counter {{ wc.state }}" aria-live="polite">
+                    <span class="qtype-essaywc-label">{{ wc.label }}</span>
+                    <span class="qtype-essaywc-number">{{ wc.count }}</span>
+                    <span class="qtype-essaywc-limits" *ngIf="wc.limits">{{ wc.limits }}</span>
+                    <span class="qtype-essaywc-status" *ngIf="wc.status">{{ wc.status }}</span>
+                </div>
+            </ion-label>
+        </ion-item>
+    </ng-container>
+
+    <!-- Reviewing. -->
+    <ng-container *ngIf="question.reviewing">
+        <ion-item class="ion-text-wrap">
+            <ion-label>
+                <p class="qtype-essaywc-answer" [class.core-monospaced]="question.isMonospaced">{{ question.answer }}</p>
+            </ion-label>
+        </ion-item>
+        <ion-item *ngIf="question.wordCountInfo" class="ion-text-wrap">
+            <ion-label>
+                <core-format-text [component]="component" [componentId]="componentId" [text]="question.wordCountInfo"
+                    [contextLevel]="contextLevel" [contextInstanceId]="contextInstanceId" [courseId]="courseId">
+                </core-format-text>
+            </ion-label>
+        </ion-item>
+    </ng-container>
+</ion-list>

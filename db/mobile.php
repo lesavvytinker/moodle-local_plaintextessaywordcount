@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Version information for the Essay (word count) question type.
+ * Moodle app support for Essay (word count) questions.
  *
  * @package    qtype_essaywc
  * @copyright  2026 Harvey, Equip English
@@ -24,12 +24,28 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'qtype_essaywc';
-$plugin->version   = 2026100600;
-$plugin->requires  = 2025041400; // Moodle 5.0.
-$plugin->supported = [500, 501];
-$plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = '1.1.0';
-$plugin->dependencies = [
-    'qtype_essay' => ANY_VERSION,
+$addons = [
+    'qtype_essaywc' => [
+        'handlers' => [
+            'essaywc' => [
+                'displaydata' => [
+                    'title' => 'Essay (word count)',
+                    'icon' => '/question/type/essaywc/pix/icon.svg',
+                    'class' => '',
+                ],
+                'delegate' => 'CoreQuestionDelegate',
+                'method' => 'mobile_get_essaywc',
+                'offlinefunctions' => [
+                    'mobile_get_essaywc' => [],
+                ],
+                'styles' => [
+                    'url' => '/question/type/essaywc/mobile/styles_app.css',
+                    'version' => '2026100600',
+                ],
+            ],
+        ],
+        'lang' => [
+            ['pluginname', 'qtype_essaywc'],
+        ],
+    ],
 ];
