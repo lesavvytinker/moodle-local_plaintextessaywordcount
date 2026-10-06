@@ -57,6 +57,17 @@ var essaywcCountWords = function(text) {
     }).length;
 };
 
+// Counter colours for each state, using the app theme's colours where it has them.
+var essaywcPrimary = 'var(--ion-color-primary, #0f6cbf)';
+var essaywcColours = {
+    'is-neutral': {border: essaywcPrimary, number: essaywcPrimary, status: 'inherit'},
+    'is-ok': {border: 'var(--ion-color-success, #357a32)', number: 'var(--ion-color-success, #357a32)', status: 'inherit'},
+    'is-under': {border: 'var(--ion-color-warning, #f0ad4e)', number: essaywcPrimary,
+        status: 'var(--ion-color-warning-shade, #8a5a00)'},
+    'is-over': {border: 'var(--ion-color-danger, #ca3120)', number: 'var(--ion-color-danger, #ca3120)',
+        status: 'var(--ion-color-danger, #ca3120)'},
+};
+
 /**
  * Get the word limits for a question, from the site's settings or from the rendered counter.
  *
@@ -120,6 +131,7 @@ var result = {
             strOver: counter.getAttribute('data-str-over') || '',
             count: 0,
             state: 'is-neutral',
+            colours: essaywcColours['is-neutral'],
             status: '',
         } : null;
 
@@ -143,6 +155,7 @@ var result = {
                 wc.state = 'is-under';
                 wc.status = wc.strUnder;
             }
+            wc.colours = essaywcColours[wc.state];
         };
 
         /**

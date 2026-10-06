@@ -40,7 +40,7 @@ $addons = [
                 ],
                 'styles' => [
                     'url' => '/question/type/essaywc/mobile/styles_app.css',
-                    'version' => '2026100600',
+                    'version' => '2026100601',
                 ],
             ],
         ],

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 (2026-10-06)
+
+- Moodle app: the word counter now shows its colours (amber below the minimum, green within the
+  limits, red over the maximum) and proper spacing, without relying on the app loading the
+  plugin stylesheet.
+
 ## 1.1.0 (2026-10-06)
 
 - Moodle app support: students can answer "Plain text, with word count" questions (and the
