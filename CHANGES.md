@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2 (2026-10-23)
+
+- Maintenance release. No functional changes.
+
 ## 1.1.1 (2026-10-06)
 
 - Moodle app: the word counter now shows its colours (amber below the minimum, green within the
